@@ -1,5 +1,5 @@
 3 - Python Playground
-**
+
 Conways Game of Life
 ******
 
