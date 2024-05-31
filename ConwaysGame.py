@@ -13,6 +13,10 @@ import matplotlib.animation as animation
 #   reshape converts into a 4x4 2D array
 x = np.random.choice([0,255], 4*4, p=[0.1,0.9]).reshape(4,4)
 
+
+# TODO: remove next line/ TEMP
+N = 4
+
 # initial condition: Particular
 def addGlider(i,j,grid):
     # glider moves steadily across grid
@@ -27,6 +31,16 @@ addGlider(1,1, grid)
 # display matrix as image
 # nearest makes cell edges sharper
 plt.imshow(x, interpolation='nearest')
+
+# TODO:
+# handles wrap around on the right side
+# right = grid[i][(j+1)%N]
+# handles wrap around on the top side
+# right = grid[(i+1)%N][j]
+
+# Conway's Rules
+# ON cell turns OFF if it has fewer than 2 neighbors that are ON of if it has more than 3 neighbors that are ON
+
 
 # output
 plt.show()
