@@ -39,8 +39,14 @@ plt.imshow(x, interpolation='nearest')
 # right = grid[(i+1)%N][j]
 
 # Conway's Rules
-# ON cell turns OFF if it has fewer than 2 neighbors that are ON of if it has more than 3 neighbors that are ON
-
+if grid[i,j] == ON:
+    # ON cell turns OFF if it has fewer than 2 neighbors that are ON of if it has more than 3 neighbors that are ON
+    if (total < 2) or (total > 3):
+        newGrid[i,j] = OFF
+    else:
+        if total == 3:
+            # only applies to off cells
+            newGrid[i,j] = ON
 
 # output
 plt.show()
